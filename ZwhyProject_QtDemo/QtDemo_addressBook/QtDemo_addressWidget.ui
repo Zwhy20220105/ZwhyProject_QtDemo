@@ -1,0 +1,23 @@
+<UI version="4.0" >
+ <class>QtDemo_addressWidget</class>
+ <widget class="QTabWidget" name="QtDemo_addressWidget" >
+  <property name="objectName" >
+   <string notr="true">QtDemo_addressWidget</string>
+  </property>
+  <property name="geometry" >
+   <rect>
+	<x>0</x>
+	<y>0</y>
+	<width>400</width>
+	<height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>QtDemo_addressWidget</string>
+  </property>
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <resources/>
+ <connections/>
+</UI>
