@@ -1,5 +1,0 @@
-total 1
--rw-r--r-- 1 Zwhy2022 197121  0 Aug  8 20:12 a.txt
--rw-r--r-- 1 Zwhy2022 197121  0 Aug  8 20:10 delete.txt
--rw-r--r-- 1 Zwhy2022 197121 24 Aug  8 20:10 readme.txt
--rw-r--r-- 1 Zwhy2022 197121  0 Aug  8 20:10 test.txt
