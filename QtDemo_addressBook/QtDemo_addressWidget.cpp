@@ -4,14 +4,13 @@
 QtDemo_addressWidget::QtDemo_addressWidget(QWidget *parent)
 	: QTabWidget(parent)
 {
-	ui = new Ui::QtDemo_addressWidget();
-	ui->setupUi(this);
 }
 
 QtDemo_addressWidget::~QtDemo_addressWidget()
 {
-	delete ui;
 }
+
+
 
 void QtDemo_addressWidget::readFromFile(const QString& fileName)
 {
@@ -26,7 +25,44 @@ void QtDemo_addressWidget::readFromFile(const QString& fileName)
 		return;
 	}
 
+	/**	 装通信录成员的数组	*/
+	QVector<Contact> tContact;
+	/**	一直不知到这种 in file怎么命名	*/
+	QDataStream in(&file);
+	/**	这个地方实际应该是调用tableModel里面的全局操作符>>,然后再调用QDataStream里面的>>这里很容易误解	*/
+	/**	但是这里如果直接打开一个txt文件,会直接报错,不知道为什么这里有bug	*/
+	in >> tContact;
 	
+	if (tContact.isEmpty())
+	{
+		QMessageBox::information(this, QString("文件中没有联系人信息"), QString("您尝试打开的文件不包含任何联系人!"));
+	}
+	else
+	{
 
+		for (const auto &tContact : qAsConst(tContact))
+		{
+			addEntry(tContact.strName, tContact.strAddress);
+		}
+	}
+}
 
+void QtDemo_addressWidget::addEntry(const QString & strName, const QString & strAddress)
+{
+	/**	如果容器中没有这个了联系人	*/
+	if (!m_tableModel->getContacts().contains({strName,strAddress}))
+	{
+		/**	这个函数是自己重载过的,并不是Qt标准库里面的	*/
+		m_tableModel->insertRows(0, 1, QModelIndex());
+		QModelIndex index = m_tableModel->index(0, 0, QModelIndex());
+		m_tableModel->setData(index, strName, Qt::EditRole);
+		index = m_tableModel->index(0, 1, QModelIndex());
+		m_tableModel->setData(index, strAddress, Qt::EditRole);
+		removeTab(indexOf(m_addressTab));
+	}
+	else
+	{
+		/**	这个地方的 \"%1"\很有意思*/
+		QMessageBox::information(this, QString("重复的联系人"),QString("联系人\"%1\"已存在").arg(strName));
+	}
 }

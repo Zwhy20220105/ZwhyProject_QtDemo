@@ -3,8 +3,9 @@
 QtDemo_addressBook::QtDemo_addressBook(QWidget *parent)
     : QMainWindow(), m_addressWidget(new QtDemo_addressWidget)
 {
-    ui.setupUi(this);
+	this->setFixedSize(800, 600);
 	this->setCentralWidget(m_addressWidget);
+
 	createMenus();
 
 }
@@ -14,10 +15,10 @@ void QtDemo_addressBook::createMenus()
 	QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
 	QAction* openAct = new QAction(tr("&Open..."), this);
 	fileMenu->addAction(openAct);
-	connect(openAct, &QAction::triggered, this, &QtDemo_addressBook::openFile);
+	connect(openAct, &QAction::triggered, this, &QtDemo_addressBook::on_btn_open_file);
 }
 
-void QtDemo_addressBook::openFile()
+void QtDemo_addressBook::on_btn_open_file()
 {
 	/**	这是调用了一个静态函数	*/
 	/**	这里很神奇的就是Z:\Zwhy2022\Desktop进不去桌面,但是Z:\Zwhy2022//Desktop是可以进去的	*/
@@ -27,7 +28,8 @@ void QtDemo_addressBook::openFile()
 	{
 		/**	这里就体现了程序的严谨性,可以的	*/
 		m_addressWidget->readFromFile(fileName);
-
 	}
+
+
 
 }

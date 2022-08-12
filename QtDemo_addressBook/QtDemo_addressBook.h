@@ -1,8 +1,8 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_QtDemo_addressBook.h"
 #include <QFileDialog>
+#include <QMenuBar>
 
 #include "QtDemo_addressWidget.h"
 
@@ -16,10 +16,10 @@ public:
 	void createMenus();
 
 public slots:
-	void openFile();
+	/**	触发window打开文件的句柄	*/
+	void on_btn_open_file();
 
 private:
-    Ui::QtDemo_addressBookClass ui;
-
+ 
 	QtDemo_addressWidget* m_addressWidget;
 };

@@ -1,2 +1,8 @@
-﻿  QtDemo_addressBook.cpp
-  QtDemo_addressBook.vcxproj -> D:\EnglishPath\Microsoft\VS2017\Source\ZwhyProject_QtDemo\x64\Release\QtDemo_addressBook.exe
+﻿  QtDemo_tableModel.cpp
+z:\github\zwhy2022\qtdemo_addressbook\qtdemo_tablemodel.cpp(33): warning C4715: “QtDemo_tableModel::insertRows”: 不是所有的控件路径都返回值
+  moc_QtDemo_addressBook.cpp
+  moc_QtDemo_addressWidget.cpp
+  moc_QtDemo_tableModel.cpp
+  moc_QtDemo_addressTab.cpp
+qtmain.lib(qtmain_win.obj) : warning LNK4099: 未找到 PDB“qtmain.pdb”(使用“qtmain.lib(qtmain_win.obj)”或在“Z:\GitHub\Zwhy2022\x64\Release\qtmain.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  QtDemo_addressBook.vcxproj -> Z:\GitHub\Zwhy2022\x64\Release\QtDemo_addressBook.exe

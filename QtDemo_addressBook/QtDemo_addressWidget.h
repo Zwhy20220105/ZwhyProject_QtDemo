@@ -5,8 +5,11 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QVector>
+#include <QDataStream>
+#include <QModelIndex>
 
-namespace Ui { class QtDemo_addressWidget; };
+#include "QtDemo_tableModel.h"
+#include "QtDemo_addressTab.h"
 
 class QtDemo_addressWidget : public QTabWidget
 {
@@ -15,9 +18,13 @@ class QtDemo_addressWidget : public QTabWidget
 public:
 	QtDemo_addressWidget(QWidget *parent = Q_NULLPTR);
 	~QtDemo_addressWidget();
-
+	
+	/**	读取通信录文件	*/
 	void readFromFile(const QString& fileName);
 
+	void addEntry(const QString& strName, const QString& strAddress);
 private:
-	Ui::QtDemo_addressWidget *ui;
+
+	QtDemo_tableModel* m_tableModel;
+	QtDemo_addressTab* m_addressTab;
 };
