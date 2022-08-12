@@ -5,7 +5,6 @@ QtDemo_addressBook::QtDemo_addressBook(QWidget *parent)
 {
 	this->setFixedSize(800, 600);
 	this->setCentralWidget(m_addressWidget);
-
 	createMenus();
 
 }

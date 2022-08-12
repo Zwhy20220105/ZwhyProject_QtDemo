@@ -29,7 +29,7 @@ void QtDemo_addressWidget::readFromFile(const QString& fileName)
 	QVector<Contact> tContact;
 	/**	一直不知到这种 in file怎么命名	*/
 	QDataStream in(&file);
-	/**	这个地方实际应该是调用tableModel里面的全局操作符>>,然后再调用QDataStream里面的>>这里很容易误解	*/
+	/**	这个地方实际应该是调用tableModel里面的全局操作符>>,然后再调用QDataStream里面的>>这里很容易误解,主要是ctrl+左键进不去,速览定义可以进去	*/
 	/**	但是这里如果直接打开一个txt文件,会直接报错,不知道为什么这里有bug	*/
 	in >> tContact;
 	
@@ -39,9 +39,10 @@ void QtDemo_addressWidget::readFromFile(const QString& fileName)
 	}
 	else
 	{
-
+		/**	qAsConst 是类型转换的	*/
 		for (const auto &tContact : qAsConst(tContact))
 		{
+			/**	一个联系人调用一次	*/
 			addEntry(tContact.strName, tContact.strAddress);
 		}
 	}
