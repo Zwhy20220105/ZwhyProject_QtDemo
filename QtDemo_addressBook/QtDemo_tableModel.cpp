@@ -27,8 +27,9 @@ bool QtDemo_tableModel::insertRows(int position, int rows, const QModelIndex& in
 	for (int row = 0;row < rows ; ++row)
 	{
 		m_contacts.insert(position, { QString(),QString() });
-		endInsertRows();
-		return	true;
 	}
+	/**	官方你这for循环都化简成一行,真的大逆不道	*/
+	endInsertRows();
+	return	true;
 }
 

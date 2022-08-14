@@ -11,10 +11,24 @@ QtDemo_addressBook::QtDemo_addressBook(QWidget *parent)
 
 void QtDemo_addressBook::createMenus()
 {
-	QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
-	QAction* openAct = new QAction(tr("&Open..."), this);
+	QMenu* fileMenu = menuBar()->addMenu(QString("文件"));
+	
+	QAction* openAct = new QAction(tr("&打开..."), this);
 	fileMenu->addAction(openAct);
 	connect(openAct, &QAction::triggered, this, &QtDemo_addressBook::on_btn_open_file);
+
+	QAction* saveAct = new QAction(QString("保存"));
+	fileMenu->addAction(saveAct);
+	connect(saveAct, &QAction::triggered, this, &QtDemo_addressBook::on_btn_save_file);
+}
+
+void QtDemo_addressBook::on_btn_save_file()
+{
+	QString strFileName = QFileDialog::getSaveFileName();
+	if (!strFileName.isEmpty())
+	{
+		m_addressWidget->writeToFile(strFileName);
+	}
 }
 
 void QtDemo_addressBook::on_btn_open_file()
@@ -28,7 +42,4 @@ void QtDemo_addressBook::on_btn_open_file()
 		/**	这里就体现了程序的严谨性,可以的	*/
 		m_addressWidget->readFromFile(fileName);
 	}
-
-
-
 }

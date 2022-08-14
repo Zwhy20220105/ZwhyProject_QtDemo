@@ -48,6 +48,7 @@ void QtDemo_addressWidget::readFromFile(const QString& fileName)
 	}
 }
 
+
 void QtDemo_addressWidget::addEntry(const QString & strName, const QString & strAddress)
 {
 	/**	如果容器中没有这个了联系人	*/
@@ -66,4 +67,18 @@ void QtDemo_addressWidget::addEntry(const QString & strName, const QString & str
 		/**	这个地方的 \"%1"\很有意思*/
 		QMessageBox::information(this, QString("重复的联系人"),QString("联系人\"%1\"已存在").arg(strName));
 	}
+}
+
+void QtDemo_addressWidget::writeToFile(const QString & strFileName)
+{
+	QFile file(strFileName);
+
+	if (!file.open(QIODevice::WriteOnly))
+	{
+		QMessageBox::information(this, QString("未能打开文件"), file.errorString());
+		return;
+	}
+	QDataStream out(&file);
+	out << m_tableModel->getContacts();
+
 }

@@ -23,6 +23,9 @@ public:
 	void readFromFile(const QString& fileName);
 
 	void addEntry(const QString& strName, const QString& strAddress);
+
+	void writeToFile(const QString& strFileName);
+
 private:
 
 	QtDemo_tableModel* m_tableModel;

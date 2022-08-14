@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_QtDemo_addressBook_t {
     QByteArrayData data[3];
-    char stringdata0[29];
+    char stringdata0[37];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,11 +33,12 @@ struct qt_meta_stringdata_QtDemo_addressBook_t {
 static const qt_meta_stringdata_QtDemo_addressBook_t qt_meta_stringdata_QtDemo_addressBook = {
     {
 QT_MOC_LITERAL(0, 0, 18), // "QtDemo_addressBook"
-QT_MOC_LITERAL(1, 19, 8), // "openFile"
-QT_MOC_LITERAL(2, 28, 0) // ""
+QT_MOC_LITERAL(1, 19, 16), // "on_btn_open_file"
+QT_MOC_LITERAL(2, 36, 0) // ""
 
     },
-    "QtDemo_addressBook\0openFile\0"
+    "QtDemo_addressBook\0on_btn_open_file\0"
+    ""
 };
 #undef QT_MOC_LITERAL
 
@@ -69,7 +70,7 @@ void QtDemo_addressBook::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         auto *_t = static_cast<QtDemo_addressBook *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->openFile(); break;
+        case 0: _t->on_btn_open_file(); break;
         default: ;
         }
     }

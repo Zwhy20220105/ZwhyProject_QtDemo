@@ -17,6 +17,7 @@ public:
 	const QVector<Contact>& getContacts() const;
 
 	bool insertRows(int position, int rows, const QModelIndex& index);
+
 private:
 
 	QVector<Contact> m_contacts;
@@ -38,4 +39,9 @@ struct Contact
 inline QDataStream& operator>> (QDataStream& stream, Contact& tContact)
 {
 	return stream >> tContact.strName >> tContact.strAddress;
+}
+
+inline QDataStream& operator<< (QDataStream& stream, const Contact& tContact)
+{
+	return stream << tContact.strName << tContact.strAddress;
 }
