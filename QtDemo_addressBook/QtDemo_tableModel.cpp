@@ -1,8 +1,9 @@
 #include "QtDemo_tableModel.h"
 
-QtDemo_tableModel::QtDemo_tableModel(QWidget *parent)
+QtDemo_tableModel::QtDemo_tableModel(QObject *parent)
 	/**	这里本来是有个 parent 不知道为什么传进去不行 */
-	: QAbstractTableModel()
+	/**	看了一下是声明那边也要同步改一下	*/
+	: QAbstractTableModel(parent)
 {
 	
 
@@ -31,5 +32,20 @@ bool QtDemo_tableModel::insertRows(int position, int rows, const QModelIndex& in
 	/**	官方你这for循环都化简成一行,真的大逆不道	*/
 	endInsertRows();
 	return	true;
+}
+
+QVariant QtDemo_tableModel::data(const QModelIndex & index, int nRole) const
+{
+	return QVariant();
+}
+
+int QtDemo_tableModel::rowCount(const QModelIndex & parent) const
+{
+	return 0;
+}
+
+int QtDemo_tableModel::columnCount(const QModelIndex & parent) const
+{
+	return 0;
 }
 

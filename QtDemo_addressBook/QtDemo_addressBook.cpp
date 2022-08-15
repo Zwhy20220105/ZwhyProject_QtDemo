@@ -13,13 +13,16 @@ void QtDemo_addressBook::createMenus()
 {
 	QMenu* fileMenu = menuBar()->addMenu(QString("文件"));
 	
-	QAction* openAct = new QAction(tr("&打开..."), this);
+	QAction* openAct = new QAction(tr("&打开"), this);
 	fileMenu->addAction(openAct);
 	connect(openAct, &QAction::triggered, this, &QtDemo_addressBook::on_btn_open_file);
 
-	QAction* saveAct = new QAction(QString("保存"));
+	QAction* saveAct = new QAction(QString("&保存"));
 	fileMenu->addAction(saveAct);
 	connect(saveAct, &QAction::triggered, this, &QtDemo_addressBook::on_btn_save_file);
+
+	 
+
 }
 
 void QtDemo_addressBook::on_btn_save_file()

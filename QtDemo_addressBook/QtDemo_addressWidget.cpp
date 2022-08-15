@@ -1,9 +1,14 @@
 #include "QtDemo_addressWidget.h"
-#include "ui_QtDemo_addressWidget.h"
 
 QtDemo_addressWidget::QtDemo_addressWidget(QWidget *parent)
-	: QTabWidget(parent)
+     /**	这个地方有点神奇,在这里构造就算了,然后他还里面是要先去重写虚函数的,只是没见过,但是不难理解吧	*/
+	/**	这边要重写一下三个函数,起初我以为是纯虚函数,必须要重载,但是现在看上去不是	*/
+	: QTabWidget(parent),m_tableModel(new QtDemo_tableModel(this)),
+	/**	这个变量在这里初始化	*/
+	m_addressTab(new QtDemo_addressTab(this))
 {
+	/**	其实这里的构造函数是先进行的,顺序没搞对,所以用起来可能bug*/
+
 }
 
 QtDemo_addressWidget::~QtDemo_addressWidget()
@@ -31,6 +36,7 @@ void QtDemo_addressWidget::readFromFile(const QString& fileName)
 	QDataStream in(&file);
 	/**	这个地方实际应该是调用tableModel里面的全局操作符>>,然后再调用QDataStream里面的>>这里很容易误解,主要是ctrl+左键进不去,速览定义可以进去	*/
 	/**	但是这里如果直接打开一个txt文件,会直接报错,不知道为什么这里有bug	*/
+	/**	还是不知道什么时候引用了tableModel里面的全局>>符号	*/
 	in >> tContact;
 	
 	if (tContact.isEmpty())
@@ -60,6 +66,9 @@ void QtDemo_addressWidget::addEntry(const QString & strName, const QString & str
 		m_tableModel->setData(index, strName, Qt::EditRole);
 		index = m_tableModel->index(0, 1, QModelIndex());
 		m_tableModel->setData(index, strAddress, Qt::EditRole);
+
+		/**	刚开始居然没发现	*/
+		/**	因为之前有个构造函数没进去,这里才会使用成员变量,要不然,是使用未初始化的指针了	*/
 		removeTab(indexOf(m_addressTab));
 	}
 	else
@@ -79,6 +88,7 @@ void QtDemo_addressWidget::writeToFile(const QString & strFileName)
 		return;
 	}
 	QDataStream out(&file);
+	/**	这里是如果是文件还好说毕竟可以以文件换行和文件结束符来终止这一切,但是如果是数组我就不知道了,	*/
 	out << m_tableModel->getContacts();
 
 }

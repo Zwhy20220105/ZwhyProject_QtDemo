@@ -5,18 +5,24 @@
 #include <QString>
 
 struct Contact;
-
+/**	自己定义了一个tableModel	*/
 class QtDemo_tableModel : public QAbstractTableModel
 {
 	Q_OBJECT
 
 public:
-	QtDemo_tableModel(QWidget *parent = nullptr);
+	QtDemo_tableModel(QObject *parent = nullptr);
 	~QtDemo_tableModel();
 
 	const QVector<Contact>& getContacts() const;
 
 	bool insertRows(int position, int rows, const QModelIndex& index);
+	/**	这个地方开始重写还想改名字,真是荒唐了	*/
+	/**	其实是有一点预警的,override加了之后,智能提示说有问题,我还纳闷了	*/
+	/**	这个地方还有一点,刚开始只有声明没有实现,就报错"无法解析的外部命令"这个老生常谈的话题*/
+	QVariant data(const QModelIndex& index, int nRole) const override;
+	int rowCount(const QModelIndex &parent) const override;
+	int columnCount(const QModelIndex &parent) const override;
 
 private:
 
