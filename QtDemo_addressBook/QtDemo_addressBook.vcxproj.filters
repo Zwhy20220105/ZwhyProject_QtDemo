@@ -43,6 +43,9 @@
     <ClCompile Include="QtDemo_addressTab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QtDemo_addDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QtDemo_addressWidget.h">
@@ -52,6 +55,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="QtDemo_addressTab.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="QtDemo_addDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

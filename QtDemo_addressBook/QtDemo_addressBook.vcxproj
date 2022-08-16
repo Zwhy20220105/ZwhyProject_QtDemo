@@ -91,6 +91,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="QtDemo_addDialog.cpp" />
     <ClCompile Include="QtDemo_addressTab.cpp" />
     <ClCompile Include="QtDemo_addressWidget.cpp" />
     <ClCompile Include="QtDemo_tableModel.cpp" />
@@ -107,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QtDemo_addressTab.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="QtDemo_addDialog.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
