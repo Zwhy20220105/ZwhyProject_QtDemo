@@ -7,6 +7,7 @@
 #include <QVector>
 #include <QDataStream>
 #include <QModelIndex>
+#include <QregularExpression>
 
 #include "QtDemo_tableModel.h"
 #include "QtDemo_addressTab.h"
@@ -25,6 +26,8 @@ public:
 	void addEntry(const QString& strName, const QString& strAddress);
 
 	void writeToFile(const QString& strFileName);
+
+	void setupTabs();
 
 private:
 

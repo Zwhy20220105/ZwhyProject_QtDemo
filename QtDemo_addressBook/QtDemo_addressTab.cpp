@@ -8,6 +8,13 @@ QtDemo_addressTab::QtDemo_addressTab(QWidget *parent)
 	auto addBtn = new QPushButton(QString("Ìí¼Ó"),this);
 
 	connect(addBtn, &QPushButton::clicked, this, &QtDemo_addressTab::on_btn_add_entry);
+
+	auto mainLayout = new QVBoxLayout;
+
+	mainLayout->addWidget(descriptionLabel,0,Qt::AlignCenter);
+	mainLayout->addWidget(addBtn, 0, Qt::AlignCenter);
+
+	this->setLayout(mainLayout);
 }
 
 QtDemo_addressTab::~QtDemo_addressTab()

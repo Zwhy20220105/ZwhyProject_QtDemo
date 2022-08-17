@@ -9,11 +9,29 @@ QtDemo_addressWidget::QtDemo_addressWidget(QWidget *parent)
 {
 	/**	其实这里的构造函数是先进行的,顺序没搞对,所以用起来可能bug*/
 
+	connect(m_addressTab, &QtDemo_addressTab::sendDetails, this, &QtDemo_addressWidget::addEntry);
+
+	this->addTab(m_addressTab, QString("地址簿"));
+
+	setupTabs();
+
 }
 
 QtDemo_addressWidget::~QtDemo_addressWidget()
 {
 }
+
+void QtDemo_addressWidget::setupTabs()
+{
+	const auto groups = { "ABC","EDF","GHI","JKL","MNO","PQR","STU","VW","XYZ" };
+
+	for (const QString& str : groups)
+	{
+		const auto regExp = QRegularExpression(QString("^[%1].*").arg(str), QRegularExpression::CaseInsensitiveOption);
+
+	}
+}
+
 
 
 
@@ -92,3 +110,4 @@ void QtDemo_addressWidget::writeToFile(const QString & strFileName)
 	out << m_tableModel->getContacts();
 
 }
+

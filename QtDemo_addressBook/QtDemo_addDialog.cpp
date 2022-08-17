@@ -9,26 +9,27 @@ QtDemo_addDialog::QtDemo_addDialog(QWidget *parent)
 {
 	auto nameLable = new QLabel(QString("姓名"));
 	auto addressLable = new QLabel(QString("地址"));
+
 	auto okBtn = new QPushButton(QString("完成"));
 	auto cancelBtn = new QPushButton(QString("取消"));
-
+	/**	网格布局	*/
 	auto gridLayout = new QGridLayout;
-
 	/**	不知道这个是干嘛的1,2	*/
+	/**	主要是这个改了并没有反应	*/
 	gridLayout->setColumnStretch(1,2);
-
 	gridLayout->addWidget(nameLable, 0, 0);
 	gridLayout->addWidget(m_nameText, 0, 1);
 
+	/**	设置布局对齐格式,在拉升的时候	*/
 	gridLayout->addWidget(addressLable, 1, 0, Qt::AlignLeft | Qt::AlignTop);
 	gridLayout->addWidget(m_addressText, 1, 1, Qt::AlignLeft);
-
+	
+	/**	水平布局	*/
 	auto btnLayout = new QHBoxLayout;
 	btnLayout->addWidget(okBtn);
 	btnLayout->addWidget(cancelBtn);
-
 	gridLayout->addLayout(btnLayout, 2, 1, Qt::AlignRight);
-
+	/**	垂直布局	*/
 	auto mainLayout = new QVBoxLayout;
 	mainLayout->addLayout(gridLayout);
 	this->setLayout(mainLayout);
@@ -43,6 +44,7 @@ QtDemo_addDialog::~QtDemo_addDialog()
 {
 
 }
+
 
 QString QtDemo_addDialog::getConetactName() const
 {
