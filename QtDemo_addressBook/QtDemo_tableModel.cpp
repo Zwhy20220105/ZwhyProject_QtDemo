@@ -6,7 +6,6 @@ QtDemo_tableModel::QtDemo_tableModel(QObject *parent)
 	: QAbstractTableModel(parent)
 {
 	
-
 }
 
 QtDemo_tableModel::~QtDemo_tableModel()

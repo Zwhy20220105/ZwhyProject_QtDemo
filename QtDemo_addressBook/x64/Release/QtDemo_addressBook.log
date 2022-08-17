@@ -1,11 +1,2 @@
-﻿  moc QtDemo_addressTab.h
-  QtDemo_addressTab.cpp
-  QtDemo_addressWidget.cpp
-  QtDemo_addressBook.cpp
-  main.cpp
-  moc_QtDemo_addressBook.cpp
-  moc_QtDemo_addressTab.cpp
-  moc_QtDemo_addressWidget.cpp
-QtDemo_addressTab.obj : error LNK2019: 无法解析的外部符号 "public: void __cdecl QtDemo_addressTab::on_btn_add_entry(void)" (?on_btn_add_entry@QtDemo_addressTab@@QEAAXXZ)，该符号在函数 "public: __cdecl QtDemo_addressTab::QtDemo_addressTab(class QWidget *)" (??0QtDemo_addressTab@@QEAA@PEAVQWidget@@@Z) 中被引用
-moc_QtDemo_addressTab.obj : error LNK2001: 无法解析的外部符号 "public: void __cdecl QtDemo_addressTab::on_btn_add_entry(void)" (?on_btn_add_entry@QtDemo_addressTab@@QEAAXXZ)
-Z:\GitHub\Zwhy2022\x64\Release\QtDemo_addressBook.exe : fatal error LNK1120: 1 个无法解析的外部命令
+﻿  QtDemo_addDialog.cpp
+  QtDemo_addressBook.vcxproj -> Z:\GitHub\Zwhy2022\x64\Release\QtDemo_addressBook.exe

@@ -4,6 +4,9 @@
 #include <QAbstractTableModel>
 #include <QLabel>
 #include <QPushButton>
+#include <QLineEdit>
+#include <QTextEdit>
+
 
 /**	这个地方居然不能用<>,虽然从理论上来说确实不能用	*/
 #include "QtDemo_addDialog.h"
@@ -18,4 +21,10 @@ public:
 
 public slots:
 	void on_btn_add_entry();
+
+private:
+	
+
+signals:
+	void sendDetails(const QString& strName, const QString& strAddress);
 };
