@@ -27,7 +27,28 @@ void QtDemo_addressWidget::setupTabs()
 
 	for (const QString& str : groups)
 	{
+		/**	这里有个正则表达式,后面那个宏是大小不敏感	*/
 		const auto regExp = QRegularExpression(QString("^[%1].*").arg(str), QRegularExpression::CaseInsensitiveOption);
+		
+		/**	这一段迷茫的很	*/
+		auto proxyModel = new QSortFilterProxyModel(this);
+		proxyModel->setSourceModel(m_tableModel);
+		proxyModel->setFilterRegularExpression(regExp);
+		proxyModel->setFilterKeyColumn(0);
+
+		QTableView* tableView = new QTableView;
+		/**	给一个view上一个模型和喝水一样	,看来是常规操作*/
+		tableView->setModel(proxyModel);
+		/**	这下面一堆都看不懂的,Qt接口也太多了	*/
+		tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+		tableView->horizontalHeader()->setStretchLastSection(true);
+		tableView->verticalHeader()->hide();
+		tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+		tableView->setSelectionMode(QAbstractItemView::SingleSelection);
+		tableView
+
+
+
 
 	}
 }

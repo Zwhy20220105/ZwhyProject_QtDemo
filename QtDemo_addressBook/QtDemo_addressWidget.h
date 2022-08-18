@@ -8,6 +8,11 @@
 #include <QDataStream>
 #include <QModelIndex>
 #include <QregularExpression>
+#include <QSortFilterProxyModel>
+#include <QTableView>
+#include <QAbstractItemView>
+#include <QItemSelection>
+#include <QHeaderView>
 
 #include "QtDemo_tableModel.h"
 #include "QtDemo_addressTab.h"
