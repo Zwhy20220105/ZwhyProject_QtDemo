@@ -45,11 +45,22 @@ void QtDemo_addressWidget::setupTabs()
 		tableView->verticalHeader()->hide();
 		tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 		tableView->setSelectionMode(QAbstractItemView::SingleSelection);
-		tableView
+		tableView->setSortingEnabled(true);
 
+		/**	这边信号和槽绑定的居然是一个非全局变量,让我非常不解	*/
+		/**	然后他的槽函数居然是一个信号,这让我大受震憾	*/
+		connect(tableView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &QtDemo_addressWidget::signalSelectionChanged);
 
-
-
+		/**	理论上是不允许使用lambda表达式做槽函数的,但是学习嘛,可以的*/
+		/**	中括号是捕获变量,()是传递参数,如果信号和槽的话,就是信号发过来的参数	*/
+		connect(this, &QTabWidget::currentChanged, this, [this, tableView](int tabIndex) {
+			/**	这边addressWidgrt主要是	*/
+			if(this->widget(tabIndex)==tableView)
+			{
+				emit signalSelectionChanged(tableView->selectionModel()->selection());
+			}
+		});
+		addTab(tableView, str);
 	}
 }
 

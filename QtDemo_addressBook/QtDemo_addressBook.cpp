@@ -20,8 +20,7 @@ void QtDemo_addressBook::createMenus()
 	QAction* saveAct = new QAction(QString("&±£´æ"));
 	fileMenu->addAction(saveAct);
 	connect(saveAct, &QAction::triggered, this, &QtDemo_addressBook::on_btn_save_file);
-
-	 
+ 
 
 }
 

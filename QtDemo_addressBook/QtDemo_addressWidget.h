@@ -34,8 +34,14 @@ public:
 
 	void setupTabs();
 
+public slots:
+	//void on_item_changed_emit(const QItemSelection& selectied);
+
 private:
 
 	QtDemo_tableModel* m_tableModel;
 	QtDemo_addressTab* m_addressTab;
+
+signals:
+	void signalSelectionChanged(const QItemSelection& selected);
 };
