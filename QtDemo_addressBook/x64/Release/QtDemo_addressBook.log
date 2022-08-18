@@ -1,8 +1,3 @@
-﻿  moc QtDemo_addressWidget.h
-  QtDemo_addressBook.cpp
-  QtDemo_addressWidget.cpp
-  main.cpp
-  moc_QtDemo_addressBook.cpp
-  moc_QtDemo_addressWidget.cpp
-qtmain.lib(qtmain_win.obj) : warning LNK4099: 未找到 PDB“qtmain.pdb”(使用“qtmain.lib(qtmain_win.obj)”或在“Z:\GitHub\Zwhy2022\x64\Release\qtmain.pdb”中寻找)；正在链接对象，如同没有调试信息一样
-  QtDemo_addressBook.vcxproj -> Z:\GitHub\Zwhy2022\x64\Release\QtDemo_addressBook.exe
+﻿  QtDemo_addressWidget.cpp
+z:\github\zwhy2022\qtdemo_addressbook\qtdemo_addresswidget.cpp(82): error C2059: 语法错误:“}”
+z:\github\zwhy2022\qtdemo_addressbook\qtdemo_addresswidget.cpp(82): error C2143: 语法错误: 缺少“;”(在“}”的前面)

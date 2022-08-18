@@ -24,4 +24,6 @@ public slots:
 private:
  
 	QtDemo_addressWidget* m_addressWidget;
+
+	QAction* editAct;
 };

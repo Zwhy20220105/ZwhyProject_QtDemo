@@ -23,7 +23,7 @@ QtDemo_addressWidget::~QtDemo_addressWidget()
 
 void QtDemo_addressWidget::setupTabs()
 {
-	const auto groups = { "ABC","EDF","GHI","JKL","MNO","PQR","STU","VW","XYZ" };
+	const auto groups = { "ABC","DEF","GHI","JKL","MNO","PQR","STU","VW","XYZ" };
 
 	for (const QString& str : groups)
 	{
@@ -66,6 +66,21 @@ void QtDemo_addressWidget::setupTabs()
 
 
 
+
+void QtDemo_addressWidget::on_dialog_add_entry()
+{
+	QtDemo_addDialog addDialog;
+	if (addDialog.exec())
+	{
+		addEntry(addDialog.getConetactName(), addDialog.getConetactAddress());
+	}
+}
+
+void QtDemo_addressWidget::on_dialog_edit_entry()
+{
+	/**	这个地方的强制转换我就没看懂了,这是在干什么,明天再看	*/
+	QTableView* editTableView = static_cast<QTableView*>(currentWidget());
+}
 
 void QtDemo_addressWidget::readFromFile(const QString& fileName)
 {

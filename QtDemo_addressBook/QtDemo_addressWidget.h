@@ -16,6 +16,7 @@
 
 #include "QtDemo_tableModel.h"
 #include "QtDemo_addressTab.h"
+#include "QtDemo_addDialog.h"
 
 class QtDemo_addressWidget : public QTabWidget
 {
@@ -36,6 +37,9 @@ public:
 
 public slots:
 	//void on_item_changed_emit(const QItemSelection& selectied);
+	void on_dialog_add_entry();
+
+	void on_dialog_edit_entry();
 
 private:
 
