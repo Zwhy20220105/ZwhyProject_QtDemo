@@ -80,6 +80,35 @@ void QtDemo_addressWidget::on_dialog_edit_entry()
 {
 	/**	这个地方的强制转换我就没看懂了,这是在干什么,明天再看	*/
 	QTableView* editTableView = static_cast<QTableView*>(currentWidget());
+	QSortFilterProxyModel* proxy = static_cast<QSortFilterProxyModel*>(editTableView->model());
+	QItemSelectionModel* selectionModel = editTableView->selectionModel();
+
+	const QModelIndexList ListIndex = selectionModel->selectedRows();
+	QString strName;
+	QString strAddress;
+	int nRow = 1;
+
+	for (const QModelIndex& index : ListIndex)
+	{
+		nRow = proxy->mapToSource(index).row();
+		QModelIndex nameIndex = m_tableModel->index(nRow, 0, QModelIndex());
+		QVariant varName = m_tableModel->data(nameIndex, Qt::DisplayRole);
+		strName = varName.toString();
+
+		QModelIndex addressIndex = m_tableModel->index(nRow, 1, QModelIndex());
+		QVariant varAddr = m_tableModel->data(addressIndex, Qt::DisplayRole);
+		strAddress = varAddr.toString();
+		1
+
+	}
+
+
+
+}
+
+void QtDemo_addressWidget::on_btn_remove_entry()
+{
+
 }
 
 void QtDemo_addressWidget::readFromFile(const QString& fileName)

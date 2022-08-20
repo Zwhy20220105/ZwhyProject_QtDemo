@@ -40,6 +40,14 @@ void QtDemo_addressBook::createMenus()
 	editAct->setEnabled(false);
 	toolMenu->addAction(editAct);
 	connect(editAct, &QAction::triggered, m_addressWidget, &QtDemo_addressWidget::on_dialog_edit_entry);
+	
+	toolMenu->addSeparator();
+
+	removeAct = new QAction(QString("ÒÆ³ýÁªÏµÈË"), this);
+	removeAct->setEnabled(false);
+	toolMenu->addAction(removeAct);	
+	//connect(removeAct,&QAction::triggered,m_addressWidget,&QtDemo_addressWidget::)
+
 
 }
 

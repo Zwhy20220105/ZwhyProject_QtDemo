@@ -1,3 +1,4 @@
-﻿  QtDemo_addressWidget.cpp
-z:\github\zwhy2022\qtdemo_addressbook\qtdemo_addresswidget.cpp(82): error C2059: 语法错误:“}”
-z:\github\zwhy2022\qtdemo_addressbook\qtdemo_addresswidget.cpp(82): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+﻿  QtDemo_addressBook.cpp
+  moc_QtDemo_addressBook.cpp
+  moc_QtDemo_addressWidget.cpp
+  QtDemo_addressBook.vcxproj -> Z:\GitHub\Zwhy2022\x64\Release\QtDemo_addressBook.exe
