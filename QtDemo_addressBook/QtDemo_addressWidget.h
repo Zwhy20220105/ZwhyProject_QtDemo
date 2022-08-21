@@ -39,9 +39,9 @@ public:
 
 public slots:
 	//void on_item_changed_emit(const QItemSelection& selectied);
-	void on_dialog_add_entry();
+	void on_btn_add_entry();
 
-	void on_dialog_edit_entry();
+	void on_btn_edit_entry();
 
 	void on_btn_remove_entry();
 

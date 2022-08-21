@@ -56,3 +56,10 @@ QString QtDemo_addDialog::getConetactAddress() const
 {
 	return m_addressText->toPlainText();
 }
+
+void QtDemo_addDialog::editContact(const QString & strName, const QString & strAddress)
+{
+	m_nameText->setReadOnly(true);
+	m_nameText->setText(strName);
+	m_addressText->setPlainText(strAddress);
+}

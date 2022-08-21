@@ -18,6 +18,9 @@ public:
 
 	QString getConetactName() const;
 	QString getConetactAddress() const;
+
+	void editContact(const QString& strName, const QString& strAddress);
+
 private:
 	QLineEdit* m_nameText;
 	QTextEdit* m_addressText;

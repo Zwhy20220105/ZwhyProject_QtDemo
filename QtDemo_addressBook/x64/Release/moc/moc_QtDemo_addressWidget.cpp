@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_QtDemo_addressWidget_t {
     QByteArrayData data[8];
-    char stringdata0[130];
+    char stringdata0[124];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,14 +37,14 @@ QT_MOC_LITERAL(1, 21, 22), // "signalSelectionChanged"
 QT_MOC_LITERAL(2, 44, 0), // ""
 QT_MOC_LITERAL(3, 45, 14), // "QItemSelection"
 QT_MOC_LITERAL(4, 60, 8), // "selected"
-QT_MOC_LITERAL(5, 69, 19), // "on_dialog_add_entry"
-QT_MOC_LITERAL(6, 89, 20), // "on_dialog_edit_entry"
-QT_MOC_LITERAL(7, 110, 19) // "on_btn_remove_entry"
+QT_MOC_LITERAL(5, 69, 16), // "on_btn_add_entry"
+QT_MOC_LITERAL(6, 86, 17), // "on_btn_edit_entry"
+QT_MOC_LITERAL(7, 104, 19) // "on_btn_remove_entry"
 
     },
     "QtDemo_addressWidget\0signalSelectionChanged\0"
-    "\0QItemSelection\0selected\0on_dialog_add_entry\0"
-    "on_dialog_edit_entry\0on_btn_remove_entry"
+    "\0QItemSelection\0selected\0on_btn_add_entry\0"
+    "on_btn_edit_entry\0on_btn_remove_entry"
 };
 #undef QT_MOC_LITERAL
 
@@ -87,8 +87,8 @@ void QtDemo_addressWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->signalSelectionChanged((*reinterpret_cast< const QItemSelection(*)>(_a[1]))); break;
-        case 1: _t->on_dialog_add_entry(); break;
-        case 2: _t->on_dialog_edit_entry(); break;
+        case 1: _t->on_btn_add_entry(); break;
+        case 2: _t->on_btn_edit_entry(); break;
         case 3: _t->on_btn_remove_entry(); break;
         default: ;
         }

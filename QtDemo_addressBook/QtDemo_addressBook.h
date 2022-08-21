@@ -21,6 +21,8 @@ public slots:
 
 	void on_btn_save_file();
 
+	void on_page_update_state(const QItemSelection& selection);
+
 private:
  
 	QtDemo_addressWidget* m_addressWidget;

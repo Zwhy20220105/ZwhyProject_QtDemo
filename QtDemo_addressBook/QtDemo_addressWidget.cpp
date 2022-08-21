@@ -3,7 +3,8 @@
 QtDemo_addressWidget::QtDemo_addressWidget(QWidget *parent)
      /**	这个地方有点神奇,在这里构造就算了,然后他还里面是要先去重写虚函数的,只是没见过,但是不难理解吧	*/
 	/**	这边要重写一下三个函数,起初我以为是纯虚函数,必须要重载,但是现在看上去不是	*/
-	: QTabWidget(parent),m_tableModel(new QtDemo_tableModel(this)),
+	: QTabWidget(parent),
+	m_tableModel(new QtDemo_tableModel(this)),
 	/**	这个变量在这里初始化	*/
 	m_addressTab(new QtDemo_addressTab(this))
 {
@@ -67,7 +68,7 @@ void QtDemo_addressWidget::setupTabs()
 
 
 
-void QtDemo_addressWidget::on_dialog_add_entry()
+void QtDemo_addressWidget::on_btn_add_entry()
 {
 	QtDemo_addDialog addDialog;
 	if (addDialog.exec())
@@ -76,19 +77,19 @@ void QtDemo_addressWidget::on_dialog_add_entry()
 	}
 }
 
-void QtDemo_addressWidget::on_dialog_edit_entry()
+void QtDemo_addressWidget::on_btn_edit_entry()
 {
 	/**	这个地方的强制转换我就没看懂了,这是在干什么,明天再看	*/
 	QTableView* editTableView = static_cast<QTableView*>(currentWidget());
 	QSortFilterProxyModel* proxy = static_cast<QSortFilterProxyModel*>(editTableView->model());
 	QItemSelectionModel* selectionModel = editTableView->selectionModel();
 
-	const QModelIndexList ListIndex = selectionModel->selectedRows();
+	const QModelIndexList listIndex = selectionModel->selectedRows();
 	QString strName;
 	QString strAddress;
 	int nRow = 1;
 
-	for (const QModelIndex& index : ListIndex)
+	for (const QModelIndex& index : listIndex)
 	{
 		nRow = proxy->mapToSource(index).row();
 		QModelIndex nameIndex = m_tableModel->index(nRow, 0, QModelIndex());
@@ -98,17 +99,40 @@ void QtDemo_addressWidget::on_dialog_edit_entry()
 		QModelIndex addressIndex = m_tableModel->index(nRow, 1, QModelIndex());
 		QVariant varAddr = m_tableModel->data(addressIndex, Qt::DisplayRole);
 		strAddress = varAddr.toString();
-		1
-
 	}
 
+	QtDemo_addDialog addDialog;
+	addDialog.setWindowTitle(QString("编辑一个联系人"));
+	addDialog.editContact(strName, strAddress);
 
-
+	if (addDialog.exec())
+	{
+		const QString strNewAddress = addDialog.getConetactAddress();
+		if (strNewAddress!=strAddress)
+		{
+			const QModelIndex index = m_tableModel->index(nRow, 1, QModelIndex());
+			m_tableModel->setData(index, strNewAddress, Qt::EditRole);
+		}
+	}
 }
 
 void QtDemo_addressWidget::on_btn_remove_entry()
 {
+	QTableView* removeTableView = static_cast<QTableView*>(currentWidget());
+	QSortFilterProxyModel *proxy = static_cast<QSortFilterProxyModel*>(removeTableView->model());
+	QItemSelectionModel* selectionModol = removeTableView->selectionModel();
 
+	const QModelIndexList listIndex = selectionModol->selectedRows();
+	for (QModelIndex index:listIndex)
+	{
+		int nRow = proxy->mapToSource(index).row();
+		m_tableModel->removeRows(nRow, 1, QModelIndex());
+	}
+
+	if (m_tableModel->rowCount(QModelIndex())==0)
+	{
+		this->insertTab(0, m_addressTab, QString("地址簿"));
+	}
 }
 
 void QtDemo_addressWidget::readFromFile(const QString& fileName)
