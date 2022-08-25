@@ -19,6 +19,11 @@ public:
 	QtDemo_addressTab(QWidget *parent);
 	~QtDemo_addressTab();
 
+
+public:
+	/**	²âÊÔº¯Êı	*/
+	void testLayout(QVBoxLayout* mainLayout);
+
 public slots:
 	void on_btn_add_entry();
 

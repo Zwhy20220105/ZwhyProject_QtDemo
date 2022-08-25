@@ -88,7 +88,46 @@ tr()这在之前做进阶培训的时候已经见过很多次了,这次bing了�
 
 
 
-### 4,QModelIndex()是什么
+### 4,构造函数生万物
+
+第一次看到这里的时候,直接去看createMenus();这个函数去了,其实还是没理解到编程的本质.编程越来越有魅力了
+
+
+
+
+
+
+
+信号
+
+```
+emit sendDetails(addDialog.getConetactName(), addDialog.getConetactAddress());
+```
+
+实现
+
+```
+
+// SIGNAL 0
+void QtDemo_addressTab::sendDetails(const QString & _t1, const QString & _t2)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+QT_WARNING_POP
+QT_END_MOC_NAMESPACE
+
+```
+
+
+
+
+
+
+
+
+
+### 0,QModelIndex()是什么
 
 QModelIndex有三个要素：**行row 列column 父节点索引parent**
 但是注意我们并不能定义一个QModelIndex
@@ -109,6 +148,10 @@ tableView.setModel(table);
 QModelIndex index1 = tableView.currentIndex ();//【3】
 //QModelIndex Model::index(int row, int column, QModelIndex parent)
 QModelIndex index2 = tabel.index(0,0,QModelIndex());//【2】【1】
+
+
+
+
 
 
 

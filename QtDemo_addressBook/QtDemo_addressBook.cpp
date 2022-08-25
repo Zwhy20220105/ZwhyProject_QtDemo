@@ -1,5 +1,8 @@
 #include "QtDemo_addressBook.h"
 
+
+/**	这个demo最主要的是,他每个类的构造很有层次感,你会很清晰的知道他类与类之间的从属关系	*/
+/**	递归*/
 QtDemo_addressBook::QtDemo_addressBook(QWidget *parent)
     : QMainWindow(), m_addressWidget(new QtDemo_addressWidget)
 {
