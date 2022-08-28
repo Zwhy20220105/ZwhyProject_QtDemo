@@ -10,6 +10,7 @@ QtDemo_tableModel::QtDemo_tableModel(QObject *parent)
 
 QtDemo_tableModel::~QtDemo_tableModel()
 {
+
 }
 
 const QVector<Contact>& QtDemo_tableModel::getContacts() const
