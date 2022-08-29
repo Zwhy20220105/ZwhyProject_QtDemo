@@ -20,6 +20,7 @@
 #include "QtDemo_addressTab.h"
 #include "QtDemo_addDialog.h"
 
+
 class QtDemo_addressWidget : public QTabWidget
 {
 	Q_OBJECT
@@ -44,7 +45,6 @@ public slots:
 	void on_btn_edit_entry();
 
 	void on_btn_remove_entry();
-
 
 private:
 

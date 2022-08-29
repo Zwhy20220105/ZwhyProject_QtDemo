@@ -54,6 +54,7 @@ void QtDemo_addressWidget::setupTabs()
 
 		/**	理论上是不允许使用lambda表达式做槽函数的,但是学习嘛,可以的*/
 		/**	中括号是捕获变量,()是传递参数,如果信号和槽的话,就是信号发过来的参数	*/
+
 		connect(this, &QTabWidget::currentChanged, this, [this, tableView](int tabIndex) {
 			/**	这边addressWidgrt主要是	*/
 			if(this->widget(tabIndex)==tableView)
@@ -63,6 +64,7 @@ void QtDemo_addressWidget::setupTabs()
 		});
 		addTab(tableView, str);
 	}
+
 }
 
 
@@ -133,6 +135,7 @@ void QtDemo_addressWidget::on_btn_remove_entry()
 	{
 		this->insertTab(0, m_addressTab, QString("地址簿"));
 	}
+
 }
 
 void QtDemo_addressWidget::readFromFile(const QString& fileName)
@@ -187,6 +190,8 @@ void QtDemo_addressWidget::addEntry(const QString & strName, const QString & str
 
 		/**	刚开始居然没发现	*/
 		/**	因为之前有个构造函数没进去,这里才会使用成员变量,要不然,是使用未初始化的指针了	*/
+		/**	这里如果有新的联系人加入,这里将会移除初始页面,也就是之前在构造函数中初始化的那个	*/
+		/**	这样一通百通了,为什么是insexOf	*/
 		removeTab(indexOf(m_addressTab));
 	}
 	else

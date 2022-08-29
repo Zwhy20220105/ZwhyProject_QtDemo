@@ -3,7 +3,7 @@
 #include <QAbstractTableModel>
 #include <QAbstractAnimation>
 #include <QString>
-
+#include <QVariant>
 
 struct Contact;
 
@@ -20,15 +20,16 @@ public:
 	/**	这个地方开始重写还想改名字,真是荒唐了	*/
 	/**	其实是有一点预警的,override加了之后,智能提示说有问题,我还纳闷了	*/
 	/**	这个地方还有一点,刚开始只有声明没有实现,就报错"无法解析的外部命令"这个老生常谈的话题*/
-	
 	QVariant data(const QModelIndex& index, int nRole) const override;
 	int rowCount(const QModelIndex &parent) const override;
-	int columnCount(const QModelIndex &parent) const override;
 
-
+	bool removeRows(int position, int rows, const QModelIndex &index /* = QModelIndex() */);
 	bool insertRows(int position, int rows, const QModelIndex& index);
+	bool setData(const QModelIndex &index, const QVariant &value, int role /* = Qt::EditRole */);
 
-
+	int columnCount(const QModelIndex &parent) const override;
+	QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+	Qt::ItemFlags flags(const QModelIndex &index) const override;
 
 	const QVector<Contact>& getContacts() const;
 
