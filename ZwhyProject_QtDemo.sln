@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.2017
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDemo_addressBook", "QtDemo_addressBook\QtDemo_addressBook.vcxproj", "{BFABB1E5-108C-4EAD-B331-11306E72CD13}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDemo_http", "QtDemo_http\QtDemo_http.vcxproj", "{BCB48230-C4C5-4F84-A42E-7A3BFEA23799}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,10 @@ Global
 		{BFABB1E5-108C-4EAD-B331-11306E72CD13}.Debug|x64.Build.0 = Release|x64
 		{BFABB1E5-108C-4EAD-B331-11306E72CD13}.Release|x64.ActiveCfg = Release|x64
 		{BFABB1E5-108C-4EAD-B331-11306E72CD13}.Release|x64.Build.0 = Release|x64
+		{BCB48230-C4C5-4F84-A42E-7A3BFEA23799}.Debug|x64.ActiveCfg = Debug|x64
+		{BCB48230-C4C5-4F84-A42E-7A3BFEA23799}.Debug|x64.Build.0 = Debug|x64
+		{BCB48230-C4C5-4F84-A42E-7A3BFEA23799}.Release|x64.ActiveCfg = Release|x64
+		{BCB48230-C4C5-4F84-A42E-7A3BFEA23799}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
