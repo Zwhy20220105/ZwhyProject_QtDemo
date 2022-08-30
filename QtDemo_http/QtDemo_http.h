@@ -11,6 +11,13 @@
 #include <QFile>
 #include <QString>
 #include <QAuthenticator>
+#include <QMessageBox>
+#include <QFormLayout>
+#include <QLayout>
+#include <QStandardPaths>
+#include <QFileInfo>
+#include <QDir>
+
 
 class QtDemo_http : public QDialog
 {
@@ -24,6 +31,14 @@ public:
 public slots:
 
 	void on_http_authentication_required(QNetworkReply* networkReply,QAuthenticator* authenticator);
+
+	void on_btn_enable_download();
+
+	void on_btn_download_file();
+
+#ifndef QT_NO_SSL
+	void on_http_ssl_errors(QNetworkReply*networkReply,const QList<QSslError>& errors);
+#endif
 
 private:
 

@@ -20,16 +20,90 @@ QtDemo_http::QtDemo_http(QWidget *parent)
 	,m_file(nullptr)
 	,m_httpRequestAborted(false)
 {
-
-	this->setFixedSize(800, 600);
+	//this->setFixedSize(800, 600);
+	/**	隐藏Dialog的?,好像还会	*/
 	setWindowFlags(windowFlags()&~Qt::WindowContextHelpButtonHint);
 	setWindowTitle(tr("Http"));
 	connect(&m_networkManager, &QNetworkAccessManager::authenticationRequired, this, &QtDemo_http::on_http_authentication_required);
+	/**	if no defined*/
+#ifndef QT_NO_SSL
+	connect(&m_networkManager, &QNetworkAccessManager::sslErrors, this, &QtDemo_http::on_http_ssl_errors);
+#endif
+	QFormLayout* formLayout = new QFormLayout;
+	m_urlLineEdit->setClearButtonEnabled(true);
+	connect(m_urlLineEdit, &QLineEdit::textChanged, this, &QtDemo_http::on_btn_enable_download);
+
+	formLayout->addRow(tr("URL:"), m_urlLineEdit);
+
+	QString strDownloadDirectory = QStandardPaths::writableLocation(QStandardPaths::TempLocation);
+	
+	if (strDownloadDirectory.isEmpty()||!QFileInfo(strDownloadDirectory).isDir())
+	{
+		strDownloadDirectory = QDir::currentPath();
+	}
+
+	m_downloadDirLineEdit->setText(QDir::toNativeSeparators(strDownloadDirectory));
+
+	formLayout->addRow(QString::fromLocal8Bit("下载目录"), m_downloadDirLineEdit);
+	formLayout->addRow(QString::fromLocal8Bit("默认文件"), m_defaultFileLineEdit);
+	m_launchCheckBox->setChecked(true);
+	formLayout->addRow(m_launchCheckBox);
+
+	QVBoxLayout* mainLayout = new QVBoxLayout(this);
+	mainLayout->addLayout(formLayout);
+
+	mainLayout->addItem(new QSpacerItem(0, 0, QSizePolicy::Ignored, QSizePolicy::MinimumExpanding));
+
+	m_statusLabel->setWordWrap(true);
+	mainLayout->addWidget(m_statusLabel);
+
+	m_downloadBtn->setDefault(true);
+	connect(m_downloadBtn, &QPushButton::clicked, this, &QtDemo_http::on_btn_download_file);
+
+
+
+
+
+
 
 }
 
 QtDemo_http::~QtDemo_http()
-{}
+{
+
+}
+
+void QtDemo_http::on_btn_enable_download()
+{
+	m_downloadBtn->setEnabled(!m_urlLineEdit->text().isEmpty());
+}
+
+void QtDemo_http::on_btn_download_file()
+{
+	const QString strStop;
+
+}
+
+void QtDemo_http::on_http_ssl_errors(QNetworkReply * networkReply, const QList<QSslError>& errors)
+{
+	QString strError;
+	for (const QSslError& error:errors)
+	{
+		if (!strError.isEmpty())
+		{
+			strError += '\n';
+		}
+		strError += error.errorString();
+	}
+	if((QMessageBox::warning(this
+		,QString::fromLocal8Bit("SSL 错误")
+		,QString::fromLocal8Bit("一个或多个SSL错误发生:\n%1").arg(strError)
+		,QMessageBox::Ignore|QMessageBox::Abort))== QMessageBox::Ignore)
+	{
+		m_networkReply->ignoreSslErrors();
+	}
+
+}
 
 
 void QtDemo_http::on_http_authentication_required(QNetworkReply* networkReply, QAuthenticator* authenticator)
