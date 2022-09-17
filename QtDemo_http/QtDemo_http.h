@@ -1,6 +1,8 @@
 #pragma once
 
 #include <QtWidgets/QDialog>
+
+/**！！！！！！！！！！！！！ Qt Part ！！！！！！！！！！！！！*/
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
@@ -18,6 +20,8 @@
 #include <QFileInfo>
 #include <QDir>
 
+/**！！！！！！！！！！！！！ C++ Part ！！！！！！！！！！！！！*/
+#include <iostream>
 
 class QtDemo_http : public QDialog
 {
@@ -47,7 +51,7 @@ private:
 	QPushButton* m_downloadBtn;
 	QCheckBox* m_launchCheckBox;
 	QLineEdit* m_defaultFileLineEdit;
-	QLineEdit* m_downloadDirLineEdit;
+	QLineEdit* m_downDirLineEdit;
 
 	QUrl m_url;
 	QNetworkAccessManager m_networkManager;

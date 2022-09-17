@@ -32,7 +32,7 @@ public:
     QLineEdit *passwordLineEdit;
     QSpacerItem *verticalSpacer;
     QDialogButtonBox *buttonBox;
-    QLabel *showSiteLable;
+    QLabel *siteDescription;
 
     void setupUi(QDialog *Dialog)
     {
@@ -81,10 +81,10 @@ public:
 
         gridLayout->addWidget(buttonBox, 5, 2, 1, 1);
 
-        showSiteLable = new QLabel(Dialog);
-        showSiteLable->setObjectName(QString::fromUtf8("showSiteLable"));
+        siteDescription = new QLabel(Dialog);
+        siteDescription->setObjectName(QString::fromUtf8("siteDescription"));
 
-        gridLayout->addWidget(showSiteLable, 1, 1, 1, 2);
+        gridLayout->addWidget(siteDescription, 1, 1, 1, 2);
 
 
         retranslateUi(Dialog);
@@ -99,7 +99,7 @@ public:
         siteLable->setText(QCoreApplication::translate("Dialog", "site", nullptr));
         userLabel->setText(QCoreApplication::translate("Dialog", "\347\224\250\346\210\267\345\220\215:", nullptr));
         passwordLable->setText(QCoreApplication::translate("Dialog", "\345\257\206\347\240\201:", nullptr));
-        showSiteLable->setText(QCoreApplication::translate("Dialog", " %1 at %2", nullptr));
+        siteDescription->setText(QCoreApplication::translate("Dialog", " %1 at %2", nullptr));
     } // retranslateUi
 
 };

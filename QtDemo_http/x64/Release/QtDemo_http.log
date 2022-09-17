@@ -1,2 +1,5 @@
-﻿  QtDemo_http.cpp
+﻿  moc QtDemo_http.h
+  QtDemo_http.cpp
+  main.cpp
+  moc_QtDemo_http.cpp
   QtDemo_http.vcxproj -> Z:\GitHub\Zwhy2022\x64\Release\QtDemo_http.exe

@@ -30,3 +30,4 @@ if (authenticationDalog.exec()==QDialog::Accepted)
 
 
 
+## 3.SSH配置不好暂时搁浅
