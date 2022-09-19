@@ -51,11 +51,13 @@
     <QtMoc Include="QtDemo_widget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="QtDemo_helper.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="QtDemo_widgetGL.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="QtDemo_helper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

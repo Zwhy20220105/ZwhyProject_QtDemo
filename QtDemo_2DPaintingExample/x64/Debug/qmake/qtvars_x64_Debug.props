@@ -1,10 +1,10 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-<Qt_DEFINES_>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG</Qt_DEFINES_>
-<Qt_INCLUDEPATH_>Z:\GitHub\Zwhy2022\QtDemo_2DPaintingExample\x64\Release\qmake\temp;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtOpenGL;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtWidgets;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtGui;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtANGLE;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtCore;Z:\GitHub\Zwhy2022\QtDemo_2DPaintingExample\x64\Release\qmake\temp;/include;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
+<Qt_DEFINES_>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Qt_DEFINES_>
+<Qt_INCLUDEPATH_>Z:\GitHub\Zwhy2022\QtDemo_2DPaintingExample\x64\Debug\qmake\temp;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtWidgets;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtGui;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtANGLE;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\include\QtCore;Z:\GitHub\Zwhy2022\QtDemo_2DPaintingExample\x64\Debug\qmake\temp;/include;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
 <Qt_STDCPP_></Qt_STDCPP_>
 <Qt_CL_OPTIONS_>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus</Qt_CL_OPTIONS_>
-<Qt_LIBS_>D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\Qt5OpenGL.lib;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\Qt5Widgets.lib;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\Qt5Gui.lib;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\Qt5Core.lib;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\qtmain.lib;shell32.lib</Qt_LIBS_>
+<Qt_LIBS_>D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\Qt5Widgetsd.lib;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\Qt5Guid.lib;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\Qt5Cored.lib;D:\EnglishPath\Qt5.13.1\5.13.1\msvc2017_64\lib\qtmaind.lib;shell32.lib</Qt_LIBS_>
 <Qt_LINK_OPTIONS_>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"</Qt_LINK_OPTIONS_>
 <QMake_QT_SYSROOT_></QMake_QT_SYSROOT_>
 <QMake_QT_INSTALL_PREFIX_>D:/EnglishPath/Qt5.13.1/5.13.1/msvc2017_64</QMake_QT_INSTALL_PREFIX_>
@@ -32,11 +32,11 @@
 <QMake_QMAKE_VERSION_>3.1</QMake_QMAKE_VERSION_>
 <QMake_QT_VERSION_>5.13.1</QMake_QT_VERSION_>
 <Qt_INCLUDEPATH_
-      >$(Qt_INCLUDEPATH_);x64\Release\moc</Qt_INCLUDEPATH_>
+      >$(Qt_INCLUDEPATH_);x64\Debug\moc</Qt_INCLUDEPATH_>
     <QtBkup_QtInstall
       >5.13.1_msvc2017_64</QtBkup_QtInstall>
     <QtBkup_QtModules
-      >core;opengl;gui;widgets</QtBkup_QtModules>
+      >core;gui;widgets</QtBkup_QtModules>
     <QtBkup_QtPathBinaries
       >bin</QtBkup_QtPathBinaries>
     <QtBkup_QtPathLibraryExecutables
@@ -50,7 +50,7 @@
     <QtBkup_QMakeCodeLines
       ></QtBkup_QMakeCodeLines>
     <QtBkup_QtBuildConfig
-      >release</QtBkup_QtBuildConfig>
+      >debug</QtBkup_QtBuildConfig>
     <QtVersion>5.13.1</QtVersion>
     <QtVersionMajor>5</QtVersionMajor>
     <QtVersionMinor>13</QtVersionMinor>

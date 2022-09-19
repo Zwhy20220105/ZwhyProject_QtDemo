@@ -5,10 +5,11 @@ QtDemo_2DPaintingExample::QtDemo_2DPaintingExample()
 	setWindowTitle(QString::fromLocal8Bit("普通情况和openGL下2D绘图对比"));
 
 	/**	仇家的诞生	*/
-	QtDemo_widget* pWidght = new QtDemo_widget(&helper, this);
+	QtDemo_widget* pWidght = new QtDemo_widget(&m_helper, this);
 	/**	这里定义的时候怎么不直接定义 pHelper	*/
-	QtDemo_widgetGL* pWidghtGL = new QtDemo_widgetGL(&helper, this);
+	QtDemo_widgetGL* pWidghtGL = new QtDemo_widgetGL(&m_helper, this);
 
+	pWidght->printHelperA();
 	/**	属于是title	*/
 	QLabel* pNativeLable = new QLabel(QString::fromLocal8Bit("原生"));
 	pNativeLable->setAlignment(Qt::AlignHCenter);
@@ -18,12 +19,13 @@ QtDemo_2DPaintingExample::QtDemo_2DPaintingExample()
 
 	QGridLayout* pGridLayout = new QGridLayout;
 	pGridLayout->addWidget(pWidght, 0, 0);
-	pGridLayout->addWidget(pOpenGLLable, 0, 1);
+	pGridLayout->addWidget(pWidghtGL, 0, 1);
+
+	/**	变量的命名确实很关键,人不可能不可能不犯错	*/
 	pGridLayout->addWidget(pNativeLable, 1, 0);
 	pGridLayout->addWidget(pOpenGLLable, 1, 1);
 
 	this->setLayout(pGridLayout);
-
 
 }
 

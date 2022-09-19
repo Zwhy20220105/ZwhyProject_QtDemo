@@ -1,7 +1,10 @@
 #pragma once
 
 #include <QWidget>
+#include <QPainter>
 #include "QtDemo_helper.h"
+#include<QDebug>
+
 class QtDemo_widget : public QWidget
 {
 	Q_OBJECT
@@ -9,6 +12,11 @@ class QtDemo_widget : public QWidget
 public:
 	QtDemo_widget(QtDemo_helper* pHelper,QWidget *parent = nullptr);
 	~QtDemo_widget();
+
+	void printHelperA();
+
+protected:
+	void paintEvent(QPaintEvent *event);
 
 private:
 	QtDemo_helper* m_pHelper;

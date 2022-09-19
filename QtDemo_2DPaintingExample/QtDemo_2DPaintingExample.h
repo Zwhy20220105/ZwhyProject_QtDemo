@@ -19,6 +19,8 @@ public:
 
 
 private:
-	QtDemo_helper helper;
+
+	/**	在这里就会调用构造函数,这里是	*/
+	QtDemo_helper m_helper;
 
 };
