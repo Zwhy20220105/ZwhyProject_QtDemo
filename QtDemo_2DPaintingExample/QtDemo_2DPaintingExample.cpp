@@ -8,8 +8,6 @@ QtDemo_2DPaintingExample::QtDemo_2DPaintingExample()
 	QtDemo_widget* pWidght = new QtDemo_widget(&m_helper, this);
 	/**	这里定义的时候怎么不直接定义 pHelper	*/
 	QtDemo_widgetGL* pWidghtGL = new QtDemo_widgetGL(&m_helper, this);
-
-	pWidght->printHelperA();
 	/**	属于是title	*/
 	QLabel* pNativeLable = new QLabel(QString::fromLocal8Bit("原生"));
 	pNativeLable->setAlignment(Qt::AlignHCenter);

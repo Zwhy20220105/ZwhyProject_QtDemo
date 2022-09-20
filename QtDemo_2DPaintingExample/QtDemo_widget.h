@@ -13,8 +13,6 @@ public:
 	QtDemo_widget(QtDemo_helper* pHelper,QWidget *parent = nullptr);
 	~QtDemo_widget();
 
-	void printHelperA();
-
 protected:
 	void paintEvent(QPaintEvent *event);
 
