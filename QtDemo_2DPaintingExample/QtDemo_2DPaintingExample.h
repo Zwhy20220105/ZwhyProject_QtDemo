@@ -3,6 +3,8 @@
 #include <QtWidgets/QWidget>
 #include <QLabel>
 #include <QGridLayout>
+#include <QTimer>
+
 
 /** 自定义的类库	*/
 #include "QtDemo_widget.h"

@@ -2,7 +2,7 @@
 
 QtDemo_2DPaintingExample::QtDemo_2DPaintingExample()
 {
-	setWindowTitle(QString::fromLocal8Bit("普通情况和openGL下2D绘图对比"));
+	setWindowTitle(QString::fromLocal8Bit("普通widget和openGL下2D绘图对比"));
 
 	/**	仇家的诞生	*/
 	QtDemo_widget* pWidght = new QtDemo_widget(&m_helper, this);
@@ -24,6 +24,11 @@ QtDemo_2DPaintingExample::QtDemo_2DPaintingExample()
 	pGridLayout->addWidget(pOpenGLLable, 1, 1);
 
 	this->setLayout(pGridLayout);
+
+	QTimer* pTimer = new QTimer(this);
+	connect(pTimer, &QTimer::timeout, pWidght, &QtDemo_widget::beAnimate);
+	connect(pTimer, &QTimer::timeout, pWidghtGL, &QtDemo_widgetGL::beAnimate);
+	pTimer->start(50);
 
 }
 

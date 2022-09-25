@@ -20,6 +20,7 @@ void QtDemo_widget::paintEvent(QPaintEvent * event)
 	QPainter painter;
 	/**	这里是painter的基本用法	*/
 	painter.begin(this);
+
 	/**	这里说是反走样,计算机图形学的概念,看样子计算机图形学的学习还不错	*/
 	painter.setRenderHint(QPainter::Antialiasing);				///<	告诉绘图引擎应该在可能的情况下进行边的反锯齿绘制
 	//qDebug() << m_pHelper->a;
@@ -27,6 +28,11 @@ void QtDemo_widget::paintEvent(QPaintEvent * event)
 	//qDebug() << m_pHelper->a;
 	m_pHelper->paint(&painter,event,m_nElapsed);	 
 	painter.end();			   
+}
 
+void QtDemo_widget::beAnimate()
+{
+	m_nElapsed = (m_nElapsed + qobject_cast<QTimer*>(sender())->interval()) % 1000;
+	update();
 }
 
