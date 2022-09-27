@@ -19,12 +19,12 @@ protected:
 
 private:
 
-
 public slots:
 
 	void beAnimate();
 
 private:
 	QtDemo_helper* m_pHelper;
+
 	int m_nElapsed;
 };

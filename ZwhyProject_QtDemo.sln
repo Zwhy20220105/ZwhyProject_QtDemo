@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDemo_http", "QtDemo_http\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDemo_2DPaintingExample", "QtDemo_2DPaintingExample\QtDemo_2DPaintingExample.vcxproj", "{EA8FD188-1747-429D-A280-EE26477C00B2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDemo_basicDrawing", "QtDemo_basicDrawing\QtDemo_basicDrawing.vcxproj", "{09C3A2D9-0AA5-41B8-AB21-46D99FCA4F1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -27,6 +29,10 @@ Global
 		{EA8FD188-1747-429D-A280-EE26477C00B2}.Debug|x64.Build.0 = Debug|x64
 		{EA8FD188-1747-429D-A280-EE26477C00B2}.Release|x64.ActiveCfg = Release|x64
 		{EA8FD188-1747-429D-A280-EE26477C00B2}.Release|x64.Build.0 = Release|x64
+		{09C3A2D9-0AA5-41B8-AB21-46D99FCA4F1B}.Debug|x64.ActiveCfg = Debug|x64
+		{09C3A2D9-0AA5-41B8-AB21-46D99FCA4F1B}.Debug|x64.Build.0 = Debug|x64
+		{09C3A2D9-0AA5-41B8-AB21-46D99FCA4F1B}.Release|x64.ActiveCfg = Release|x64
+		{09C3A2D9-0AA5-41B8-AB21-46D99FCA4F1B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

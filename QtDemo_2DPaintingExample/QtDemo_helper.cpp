@@ -88,7 +88,11 @@ void QtDemo_helper::paint(QPainter* pPainter, QPaintEvent* event, int nElapsed)
 		/**	所以这个是可以画出椭圆的	*/
 		/**	这个看起来很奇怪,是因为每次都进行了旋转,坐标轴会的变得	*/
 		/**	注意这里Y轴正方形是向下的,所以这里是负的	*/
-		pPainter->drawEllipse(QRect(radius, -circleRadius, circleRadius * 2, circleRadius * 2));
+
+		/**————————————— 这一句用的QRect就会出现画面抖动的情况 —————————————*/
+		pPainter->drawEllipse(QRectF(radius, -circleRadius, circleRadius * 2, circleRadius * 2));
+		/**————————————— 改了这里之后,就好了,因为点位不准,所以动画不平滑 —————————————*/
+		
 		//pPainter->drawLine(QPointF(0, 0), QPointF(100, 100));		
 	}
 
