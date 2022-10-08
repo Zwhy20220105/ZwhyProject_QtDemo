@@ -1,9 +1,5 @@
-﻿  rcc QtDemo_basicDrawing.qrc
-  moc QtDemo_renderArea.h
-  QtDemo_renderArea.cpp
+﻿  moc QtDemo_basicDrawing.h
   QtDemo_basicDrawing.cpp
   main.cpp
   moc_QtDemo_basicDrawing.cpp
-  qrc_QtDemo_basicDrawing.cpp
-  moc_QtDemo_renderArea.cpp
   QtDemo_basicDrawing.vcxproj -> Z:\GitHub\Zwhy2022\x64\Release\QtDemo_basicDrawing.exe

@@ -1,3 +1,4 @@
+
 #include "QtDemo_renderArea.h"
 
 QtDemo_renderArea::QtDemo_renderArea(QWidget *parent)
@@ -18,7 +19,7 @@ QtDemo_renderArea::QtDemo_renderArea(QWidget *parent)
 	/**	装载图片,在某个枚举值被选中之后画出来	*/
 	pixmap.load(":/images/qt-logo.png");
 
-
+	/**	很多宏和方法都不知道如何使用,这可能要慢慢学吧	*/
 	setBackgroundRole(QPalette::Base);
 	setAutoFillBackground(true);
 

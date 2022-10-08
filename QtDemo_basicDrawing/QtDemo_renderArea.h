@@ -19,19 +19,20 @@ public:
 
 	enum Shape
 	{
-		em_Line,
-		em_Points,
-		em_Polyline,
-		em_Polygon,
-		em_Rect,
-		em_RoundedRect,
-		em_Ellipse,
-		em_Arc,
-		em_Chord,
-		em_Pie,
-		em_Path,
-		em_Text,
-		em_Pixmap
+		em_Line,	    ///< 线条
+		em_Points,	    ///< 点集 
+		em_Polyline,    ///< 折线
+		em_Polygon,	    ///< 多边形 
+		em_Rect,        ///< 矩阵
+		em_RoundedRect, ///< 圆角矩形 
+		em_Ellipse,		///< 椭圆
+		em_Arc,			///< 弧线 
+		em_Chord,		///< 小半圆
+		em_Pie,			///< 扇形
+		em_Path,		///< 微积分
+		em_Text,		///< 文本
+		em_Pixmap		///< 图片
+
 	};
 
 /**————————————— 保护的函数,一般作为重写虚函数的继承权限 —————————————*/
@@ -46,7 +47,7 @@ public slots:
 /**————————————— 成员变量的权限默认是私有的 —————————————*/
 private:
 	Shape m_shape;
-
+	 
 	bool m_bAntialiased;
 	bool m_bTransformed;
 
